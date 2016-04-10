@@ -23,3 +23,14 @@ To simulate locally how Mixmax calls the resolver URL (to return HTML that goes 
 ```
 curl http://localhost:9145/resolver?text=608a651b4ffeb5a0514cd9074206b1d37b459531a8c0772ee643c5ad88e6e7e0
 ```
+
+## Adding Mixmax Integration
+From your Mixmax dashboard, go to Integrations, and click Add Slash Command:
+
+| Field                                 | You Enter                       |
+| ------------------------------------- | ------------------------------- |
+| Name                                  | txid graph                      |
+| Command                               | txid                            |
+| Parameter placeholder                 | [txid]                          |
+| Command Parameter Suggestions API URL | http://localhost:9145/typeahead |
+| Command Parameter Resolver API URL    | http://localhost:9145/resolver  |
