@@ -52,10 +52,12 @@ module.exports = function(req, res) {
     g.addEdge(inNode, outNode);
   });
 
-  // render svg to replace link
-  g.render('svg', function(buf) {
+  // render png to replace link
+  g.render('png', function(buf) {
+    var src = 'data:image/png;base64,' + buf.toString('base64');
+    var html = '<img style="max-width:100%;" src="' + src + '">';
     res.json({
-      body: buf.toString('utf8')
+      body: html
     });
   }, function(err) {
     res.status(500).send('Error');
