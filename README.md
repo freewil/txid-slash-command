@@ -1,5 +1,10 @@
 # Bitcoin /txid slash command for Mixmax
 
+## Known Issues
+Once the email is sent, Gmail will strip out the svg tags. This should be modified so that the resolver simply returns an img tag. There are two ways to accomplish this:
+ * a) upload the generated graph to an external service (such as S3) or
+ * b) cachs the generated graph and serve it from this web service
+
 This web service will allow you to add a /txid <txid> command to Mixmax which
 will provide a simple graph of the outputs of a bitcoin transaction.
 
